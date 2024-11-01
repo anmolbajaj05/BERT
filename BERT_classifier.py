@@ -21,6 +21,7 @@ from transformers import BertTokenizer, TFBertForSequenceClassification
 import numpy as np
 import pandas as pd
 from datetime import datetime
+from tensorflow.keras.metrics import Precision, Recall
 
 # Checking GPU availability to ensure optimal use of resources
 if tf.config.list_physical_devices('GPU'):
@@ -34,7 +35,7 @@ model = TFBertForSequenceClassification.from_pretrained('bert-base-uncased')
 DATA_COLUMN = "sentence"
 LABEL_COLUMN = "polarity"
 BATCH_SIZE = 32
-MAX_SEQ_LENGTH = 128  # Sequence length set based on BERT recommendations for short texts
+MAX_SEQ_LENGTH = 512  # Sequence length set based on BERT recommendations for short texts
 
 # Defining function to download and load the dataset
 def download_and_load_datasets(force_download=False):
@@ -106,7 +107,7 @@ model = create_model()
 
 # Setting up training parameters and compilation
 optimizer = tf.keras.optimizers.Adam(learning_rate=2e-5)
-model.compile(optimizer=optimizer, loss=model.compute_loss, metrics=['accuracy'])
+model.compile(optimizer=optimizer, loss=model.compute_loss, metrics=['accuracy' Precision(), Recall()])
 
 # Training the model
 print("Starting training...")
