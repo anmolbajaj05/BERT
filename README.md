@@ -31,6 +31,18 @@ These adjustments were minimal yet critical to adapting BERT for sentiment analy
 - **Model Training and Evaluation**: BERT’s powerful language understanding is fine-tuned on the IMDb data to optimise performance for sentiment classification. Key metrics such as accuracy, precision, and recall are used to evaluate the model’s success in classifying positive and negative reviews.
 - **Prediction Output**: After training, the model generates prediction probabilities for each test sample. These results are stored in a structured format, making it easy to analyse the model’s performance across the test dataset.
 
+## Troubleshooting & Verification
+
+To avoid common errors, follow these verification steps:
+
+### Environment Setup
+Confirm that all required libraries (`tensorflow`, `tensorflow_hub`, `transformers`) are installed and import correctly. This ensures your environment is ready for running the BERT model.
+
+### Check Model Compatibility
+Ensure compatibility of `BertTokenizer` and `TFBertForSequenceClassification` by testing imports:
+
+```python from transformers import BertTokenizer, TFBertForSequenceClassification ```
+
 ## Project Reflections
 This project demonstrates BERT’s adaptability and effectiveness for sentiment analysis. Despite running on a CPU, the model’s performance showcases its strength in capturing nuanced sentiment patterns in text. Each processing step—from tokenisation to evaluation—adds to a robust framework for text classification, setting a high standard for future NLP projects.
 
