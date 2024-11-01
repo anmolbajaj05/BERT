@@ -41,7 +41,7 @@ Confirm that all required libraries (`tensorflow`, `tensorflow_hub`, `transforme
 ### Check Model Compatibility
 Ensure compatibility of `BertTokenizer` and `TFBertForSequenceClassification` by testing imports:
 
-```python from transformers import BertTokenizer, TFBertForSequenceClassification ```
+```from transformers import BertTokenizer, TFBertForSequenceClassification ```
 
 ## Project Reflections
 This project demonstrates BERT’s adaptability and effectiveness for sentiment analysis. Despite running on a CPU, the model’s performance showcases its strength in capturing nuanced sentiment patterns in text. Each processing step—from tokenisation to evaluation—adds to a robust framework for text classification, setting a high standard for future NLP projects.
